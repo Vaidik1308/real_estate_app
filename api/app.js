@@ -2,6 +2,7 @@ import express from "express";
 import cors from 'cors';
 import postRoute from "./routes/post.route.js";
 import authRoute from "./routes/auth.route.js";
+import testRoute from "./routes/test.route.js";
 import cookieParser from "cookie-parser";
 
 
@@ -15,6 +16,7 @@ app.use(cookieParser())
 
 app.use("/api/posts",postRoute)
 app.use("/api/auth", authRoute)
+app.use("/api/test",testRoute)
 
 app.use("/" , (req,res) => {
     res.send("hello world")
